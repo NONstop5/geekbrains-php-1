@@ -77,25 +77,32 @@ echo PHP_EOL;
 
 // 3
 
-function sum($arg1, $arg2) {
+function sum($arg1, $arg2)
+{
     return $arg1 + $arg2;
 }
 
-function subtract($arg1, $arg2) {
+function subtract($arg1, $arg2)
+{
     return $arg1 - $arg2;
 }
 
-function multiply($arg1, $arg2) {
+function multiply($arg1, $arg2)
+{
     return $arg1 * $arg2;
 }
 
-function division($arg1, $arg2) {
+function division($arg1, $arg2)
+{
     return $arg1 / $arg2;
 }
 
+echo PHP_EOL;
+
 // 4
 
-function mathOperation($arg1, $arg2, $operation) {
+function mathOperation($arg1, $arg2, $operation)
+{
     $result = null;
 
     switch ($operation) {
@@ -118,6 +125,8 @@ function mathOperation($arg1, $arg2, $operation) {
 
 echo mathOperation(5, 7, '+');
 
+echo PHP_EOL;
+
 // 5
 
 function power($val, $pow)
@@ -132,3 +141,24 @@ function power($val, $pow)
 }
 
 echo power(2, 5);
+
+echo PHP_EOL;
+
+// 6
+
+function declOfNum($num, $titles)
+{
+    $cases = [2, 0, 1, 1, 1, 2];
+
+    return $num . ' ' . $titles[($num % 100 > 4 && $num % 100 < 20) ? 2 : $cases[min($num % 10, 5)]];
+}
+
+function getCurrentDate()
+{
+    $hours = declOfNum(date('H'), ['час', 'часа', 'часов']);
+    $minutes = declOfNum(date('i'), ['минута', 'минуты', 'минут']);
+
+    return $hours . ' ' . $minutes;
+}
+
+echo getCurrentDate();
