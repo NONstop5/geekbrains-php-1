@@ -12,6 +12,8 @@ while ($i < 100) {
     $i++;
 }
 
+echo PHP_EOL;
+
 // 2
 
 function checkNumberEven($number)
@@ -30,3 +32,31 @@ do {
     checkNumberEven($i);
     $i++;
 } while ($i <= 10);
+
+echo PHP_EOL;
+
+// 3
+
+$regions = [
+    'Московская область:' => [
+        'Москва',
+        'Зеленоград',
+        'Клин',
+    ],
+    'Ленинградская область:' => [
+        'Санкт-Петербург',
+        'Всеволожск',
+        'Павловск',
+        'Кронштадт',
+    ],
+    'Рязанская область:' => [
+        'Рязань',
+        'Сасово',
+        'Скопин',
+    ],
+];
+
+foreach ($regions as $region => $cities) {
+    echo $region . PHP_EOL;
+    echo implode(', ', $cities) . PHP_EOL;
+}
