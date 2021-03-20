@@ -5,6 +5,41 @@ $pageTitle = 'Index page';
 $aboutUsHeader = 'About Us';
 $currentYear = date('Y');
 
+$menuList = [
+    [
+        'name' => 'Home',
+        'link' => '#',
+    ],
+    [
+        'name' => 'About',
+        'link' => '#about-us',
+    ],
+    [
+        'name' => 'Services',
+        'link' => '#services',
+    ],
+    [
+        'name' => 'Gallery',
+        'link' => '#gallery',
+    ],
+    [
+        'name' => 'News',
+        'link' => '#',
+        'submenu' => [
+            'submenu1',
+            'submenu2',
+            'submenu3',
+        ],
+    ],
+    [
+        'name' => 'Team',
+        'link' => '#our-team',
+    ],
+    [
+        'name' => 'Contact Us',
+        'link' => '#contact-us',
+    ],
+];
 ?>
 
 <!doctype html>
@@ -43,27 +78,26 @@ $currentYear = date('Y');
     </div>
     <div class="container">
         <div class="header-menu">
-            <div class="header-menu__item">
-                <a href="#">Home</a>
-            </div>
-            <div class="header-menu__item">
-                <a href="#about-us">About</a>
-            </div>
-            <div class="header-menu__item">
-                <a href="#services">Services</a>
-            </div>
-            <div class="header-menu__item">
-                <a href="#gallery">Gallery</a>
-            </div>
-            <div class="header-menu__item">
-                <a href="#">News</a>
-            </div>
-            <div class="header-menu__item">
-                <a href="#our-team">Team</a>
-            </div>
-            <div class="header-menu__item">
-                <a href="#contact-us">Contact Us</a>
-            </div>
+            <?php
+            foreach ($menuList as $menuItem) {
+                ?>
+                <div class="header-menu__item">
+                    <a href="<?php echo $menuItem['link'] ?>">
+                        <?php echo $menuItem['name'] ?>
+                    </a>
+                    <?php
+                    if (!empty($menuItem['submenu'])) {
+                        foreach ($menuItem['submenu'] as $subMenuItem) {
+                            ?>
+                            <div><?php echo $subMenuItem ?></div>
+                            <?php
+                        }
+                    }
+                    ?>
+                </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
     <div class="header__hr"></div>
