@@ -150,4 +150,10 @@ function replaceSpaceToUnderscore($value)
     return str_replace(' ', '_', $value);
 }
 
-echo replaceSpaceToUnderscore('Проверка работы замены пробелов');
+echo replaceSpaceToUnderscore('Проверка работы замены пробелов') . PHP_EOL;
+
+echo PHP_EOL;
+
+// 7
+
+for ($i = 0; $i <= 9; print($i++)) {}
