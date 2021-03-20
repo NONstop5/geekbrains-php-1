@@ -140,3 +140,14 @@ function transliterate($value)
 }
 
 echo transliterate('Тестовая строка. Проверка работы');
+
+echo PHP_EOL;
+
+// 5
+
+function replaceSpaceToUnderscore($value)
+{
+    return str_replace(' ', '_', $value);
+}
+
+echo replaceSpaceToUnderscore('Проверка работы замены пробелов');
