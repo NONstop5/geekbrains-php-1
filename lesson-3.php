@@ -157,3 +157,41 @@ echo PHP_EOL;
 // 7
 
 for ($i = 0; $i <= 9; print($i++)) {}
+
+echo PHP_EOL;
+echo PHP_EOL;
+
+// 8
+
+$regions = [
+    'Московская область:' => [
+        'Москва',
+        'Зеленоград',
+        'Клин',
+    ],
+    'Ленинградская область:' => [
+        'Санкт-Петербург',
+        'Всеволожск',
+        'Павловск',
+        'Кронштадт',
+    ],
+    'Рязанская область:' => [
+        'Рязань',
+        'Сасово',
+        'Скопин',
+    ],
+];
+
+foreach ($regions as $region => $cities) {
+    echo $region;
+
+    foreach ($cities as $key => $city) {
+        if (!mb_strstr($city, 'К')) {
+            unset($cities[$key]);
+        }
+    }
+
+    if (!empty($cities)) {
+        echo  PHP_EOL . implode(', ', $cities) . PHP_EOL;
+    }
+}
