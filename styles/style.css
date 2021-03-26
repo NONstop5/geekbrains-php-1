@@ -416,20 +416,20 @@ h2 {
     margin-right: 17px;
 }
 
-.subscribe {
+.upload-images {
     background: url("../img/subscribe_background.png") no-repeat;
     background-size: cover;
     height: 313px;
     margin-bottom: 97px;
 }
 
-.subscribe .container {
+.upload-images .container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.subscribe__text {
+.upload-images__text {
     color: #ffffff;
     font-family: Poppins, serif;
     font-size: 48px;
@@ -439,7 +439,7 @@ h2 {
     margin-bottom: 53px;
 }
 
-.subscribe #subscribe__input {
+.upload-images #upload-images__input {
     width: 439px;
     background-color: #ffffff;
     padding: 22px 30px;
@@ -447,7 +447,7 @@ h2 {
     outline: none;
 }
 
-.subscribe .subscribe__button {
+.upload-images .upload-images__button {
     padding: 21px 33px;
     color: #ffffff;
     background-color: #f44336;
@@ -455,11 +455,11 @@ h2 {
     outline: none;
 }
 
-.subscribe #subscribe__input:focus {
+.upload-images #upload-images__input:focus {
     outline: 1px solid #f44336;
 }
 
-.subscribe .subscribe__button:focus {
+.upload-images .upload-images__button:focus {
     outline: 1px solid #ffffff;
 }
 
